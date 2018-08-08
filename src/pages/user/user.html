@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>User</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div *ngIf="isVisible">
+    <h1>{{ user?.login }}</h1>
+    <img src="{{ user?.avatar_url }}" alt="User avatar">
+    <p><b>Name:</b> {{ user?.name || auxMessage }}</p>
+    <p><b>Email:</b> {{ user?.email || auxMessage }}</p>
+    <p><b>Bio:</b> {{ user?.bio || auxMessage }}</p>
+    <p><b>Company:</b> {{ user?.company || auxMessage }}</p>
+    <p><b>Location:</b> {{ user?.location || auxMessage }}</p>
+    <p><b>Public repos:</b> {{ user?.public_repos }}</p>
+  </div>
+  <span *ngIf="!isVisible">{{ message }}</span>
+
+</ion-content>
